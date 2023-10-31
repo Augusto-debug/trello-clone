@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { MagnifyingGlassIcon, UserIcon } from "@heroicons/react/24/solid";
+import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Avatar from "react-avatar";
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
           alt="trello logo"
           width={300}
           height={100}
-          className="w-44 md:w-56 pb-10 md:pb-0 object-contain ml-5"
+          className="w-44 md:w-56 pb-10 md:pb-0 object-contain"
         />
         <div className="flex items-center space-x-5 flex-1 justify-end w-full">
           <form className="flex items-center space-x-5 bg-white rounded-md p-2 shadow-md flex-1 md:flex-initial">
@@ -26,6 +26,13 @@ const Header = () => {
           </form>
           <Avatar name="Augusto Cesar" round={true} size="50" color="#0055d1" />
         </div>
+      </div>
+
+      <div className="flex items-center justify-center py-2 px-5 md:py-5">
+        <p className="flex items-center text-sm font-light p-5 pr-5 shadow-xl rounded-xl w-fit bg-white italic max-w-3xl text-[#0055d1] ">
+          <UserCircleIcon className="inline-block h-10 w-10 text-[#0055d1]" />
+          Gpt is summarising your tasks for the day...
+        </p>
       </div>
     </header>
   );
