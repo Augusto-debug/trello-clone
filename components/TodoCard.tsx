@@ -1,12 +1,16 @@
 import React from "react";
+import {
+  DraggableProvidedDragHandleProps,
+  DraggableProvidedDraggableProps,
+} from "react-beautiful-dnd";
 
 type TodoCardsProps = {
   todo: Todo;
   index: number;
   id: TypedColumn;
-  innerRef: any;
-  draggableProps: any;
-  dragHandleProps: any;
+  innerRef: (element: HTMLElement | null | undefined) => void;
+  draggableProps: DraggableProvidedDraggableProps;
+  dragHandleProps: DraggableProvidedDragHandleProps;
 };
 
 const TodoCard = ({
