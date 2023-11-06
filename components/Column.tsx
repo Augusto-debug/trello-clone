@@ -1,6 +1,7 @@
 import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import TodoCard from "./TodoCard";
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
 
 type Props = {
   id: TypedColumn;
@@ -61,6 +62,12 @@ const Column = ({ id, todos, index }: Props) => {
                   ))}
 
                   {provided.placeholder}
+
+                  <div className="p-2 flex items-end justify-end">
+                    <button className="text-green-500 hover:text-green-600">
+                      <PlusCircleIcon className="h-10 w-10" />
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
