@@ -36,7 +36,7 @@ const Column = ({ id, todos, index }: Props) => {
                   snapshot.isDraggingOver ? "bg-green-200" : "bg-white/50"
                 } `}
               >
-                <h2 className="flex justify-between font-bold text-xl">
+                <h2 className="flex justify-between font-bold text-xl mb-3">
                   {IdColumnText[id]}
                   <span className=" text-gray-500 bg-gray-200 rounded-full px-2 py-1 text-sm font-normal ">
                     {!searchString
@@ -80,7 +80,7 @@ const Column = ({ id, todos, index }: Props) => {
 
                   {provided.placeholder}
 
-                  <div className="p-2 flex items-end justify-end">
+                  <div className="p-2 flex items-end justify-end ">
                     <button className="text-green-500 hover:text-green-600">
                       <PlusCircleIcon className="h-10 w-10" />
                     </button>
