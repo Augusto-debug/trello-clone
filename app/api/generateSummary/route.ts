@@ -1,10 +1,10 @@
+import openai from "@/openAi";
 import { NextResponse } from "next/server";
-import openAi from "@/openAi";
 
 export async function POST(req: Request) {
   const { todos } = await req.json();
 
-  const response = await openAi.createChatCompletion({
+  const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [
       {
@@ -21,6 +21,7 @@ export async function POST(req: Request) {
     ],
   });
 
-  const { data } = response;
+  const data = response.choices[0].message;
+
   return NextResponse.json(data);
 }

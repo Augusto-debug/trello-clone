@@ -12,21 +12,6 @@ const Header = () => {
     state.setSearchString,
   ]);
 
-  const [loading, setLoading] = useState(false);
-  const [suggestions, setSuggestions] = useState<string>("");
-
-  useEffect(() => {
-    if (board.columns.size === 0) return;
-    setLoading(true);
-
-    const fetchSuggestionsFunc = async () => {
-      const suggestion = await fetchSuggestions(board);
-      setSuggestions(suggestion);
-      setLoading(false);
-    };
-    fetchSuggestionsFunc();
-  }, [board]);
-
   return (
     <header>
       <div className="flex flex-col md:flex-row items-center  p-5 bg-gray-500/10 rounded-b-2xl ">
@@ -57,14 +42,8 @@ const Header = () => {
 
       <div className="flex items-center justify-center py-2 px-5 md:py-5">
         <p className="flex items-center text-sm font-light p-5 pr-5 shadow-xl rounded-xl w-fit bg-white italic max-w-3xl text-[#0055d1] ">
-          <UserCircleIcon
-            className={`inline-block h-10 w-10 text-[#0055d1] ${
-              loading && "animate-spin"
-            }`}
-          />
-          {suggestions && !loading
-            ? suggestions
-            : "Gpt is summarising your tasks for the day..."}
+          <UserCircleIcon className="inline-block h-10 w-10 text-[#0055d1]" />
+          Gpt is summarising your tasks for the day...
         </p>
       </div>
     </header>
